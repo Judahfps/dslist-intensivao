@@ -1,6 +1,7 @@
 package com.guilherme.dslist_intensivao.dto;
 
 import com.guilherme.dslist_intensivao.entities.Game;
+import com.guilherme.dslist_intensivao.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -23,6 +24,17 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	
+	public GameMinDTO(GameMinProjection projection) {
+		/*Como não temos a ambiguidade de id e dos demais, não presisamos usar o (this), que especifica qual o valor estar sendo passado.*/
+		
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
 	}
 
 
