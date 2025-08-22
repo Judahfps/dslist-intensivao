@@ -1,6 +1,6 @@
 package com.guilherme.dslist_intensivao.dto;
 
-import com.guilherme.dslist_intensivao.Game;
+import com.guilherme.dslist_intensivao.entities.Game;
 
 public class GameMinDTO {
 	

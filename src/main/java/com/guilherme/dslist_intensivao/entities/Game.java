@@ -1,4 +1,4 @@
-package com.guilherme.dslist_intensivao;
+package com.guilherme.dslist_intensivao.entities;
 
 import java.util.Objects;
 

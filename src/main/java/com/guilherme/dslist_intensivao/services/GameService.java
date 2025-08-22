@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.guilherme.dslist_intensivao.Game;
 import com.guilherme.dslist_intensivao.dto.GameMinDTO;
+import com.guilherme.dslist_intensivao.entities.Game;
 import com.guilherme.dslist_intensivao.repositories.GameRepository;
 
 /*Vamos ter que resistrar essa class sendo como um componente do sistema, porque o framework que vai fazer uso dele. */
