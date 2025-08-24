@@ -9,7 +9,7 @@
 		<version>3.5.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupI>com.devsuperior</groupI>
+	<groupId>com.devsuperior</groupId>
 	<artifactId>dslist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dslist</name>
@@ -44,28 +44,19 @@
 		</dependency>
 	</dependencies>
 
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>3.1.0</version> </plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version> <!--$NO-MVN-MAN-VER$ -->
+			</plugin>
 
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.15.0</version>
-            <configuration>
-                <source>21</source>
-                <target>21</target>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-</build>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
