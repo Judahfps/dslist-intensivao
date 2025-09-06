@@ -8,7 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.guilherme.dslist_intensivao.dto.GameListDTO;
 import com.guilherme.dslist_intensivao.entities.GameList;
+import com.guilherme.dslist_intensivao.projections.GameMinProjection;
 import com.guilherme.dslist_intensivao.repositories.GameListRepository;
+import com.guilherme.dslist_intensivao.repositories.GameRepository;
 
 
 /*Vamos ter que resistrar essa class sendo como um componente do sistema, porque o framework que vai fazer uso dele. */
@@ -23,11 +25,25 @@ public class GameListService {
 	@Autowired
 	private GameListRepository gameLisRepository; /*Para chamar a camada de repository eu tenhom que ter uma instancia dela na minha service, aqui eu estou fazendo isso*/
 	
+	@Autowired
+	private GameRepository gameRepository;
+	
+	
 	
 	@Transactional(readOnly = true)
 	public List<GameListDTO> findAll(){
 		List<GameList> result = gameLisRepository.findAll();
 		return result.stream().map(x -> new GameListDTO(x)).toList();
+		
+	}
+	
+	public void Move(Long listId, int sourceIdex, int destinationIndex) {
+		
+		List<GameMinProjection> list = gameRepository.searchByList(listId);
+		
+		GameMinProjection obj = list.remove(sourceIdex);
+		list.add(destinationIndex);
+
 		
 	}
 	
